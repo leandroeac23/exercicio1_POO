@@ -1,0 +1,1 @@
+testando se modificar a branch main salva nas outras branches arquivos de mesmo nome (o que seria o mesmo arquivo nas duas branches).
