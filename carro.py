@@ -1,3 +1,6 @@
+# Importamos a biblioteca de tempo no topo do código
+import time
+
 # 2) Criação da Classe Carro
 class Carro:
     # Este é o método construtor. Ele "molda" o objeto quando ele é criado.
@@ -5,7 +8,7 @@ class Carro:
         self.modelo = modelo
         self.cor = cor
         # O duplo sublinhado (__) torna o atributo PRIVADO
-        self.velocidade_instantanea = 500
+        self.velocidade_instantanea = 0.0
 
     # Método PÚBLICO para alterar a velocidade de forma segura
     def acelerar(self, taxa_de_aceleracao):
@@ -18,15 +21,20 @@ class Carro:
 
 # --- INÍCIO DA MAIN ---
 if __name__ == "__main__":
-    meu_carro = Carro("Fusca", "Branco")
+    meu_carro = Carro("Fusca", "Preto")
 
-    # 0. Imprime ANTES de acelerar (vai mostrar 500)
-    print(f"Velocidade inicial de fábrica: {meu_carro.get_velocidade()} km/h")
+    print(f"Carro ligado. Velocidade inicial: {meu_carro.get_velocidade()} km/h")
+    print("Iniciando a rampa de aceleração...\n")
 
-    # 1. Usando a forma correta (Pública)
-    meu_carro.acelerar(15.5)
-    print(f"Velocidade correta: {meu_carro.get_velocidade()} km/h")
+    # Criamos um loop que vai se repetir 5 vezes
+    for instante in range(5):
+        # 1. Chamamos o método para somar 15.5 na velocidade atual
+        meu_carro.acelerar(15.5)
+        
+        # 2. Imprimimos o resultado na tela
+        print(f"Segundo {instante + 1}: Velocidade = {meu_carro.get_velocidade()} km/h")
+        
+        # 3. Pausamos o programa por 1 segundo antes do próximo ciclo
+        time.sleep(1)
 
-    # 2. O TESTE DA PERGUNTA 1: Tentando acessar a variável privada direto
-    print("Tentando ler a variável privada diretamente...")
-    print(meu_carro.velocidade_instantanea)
+    print("\nTeste de aceleração finalizado!")
