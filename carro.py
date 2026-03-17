@@ -5,15 +5,15 @@ class Carro:
         self.modelo = modelo
         self.cor = cor
         # O duplo sublinhado (__) torna o atributo PRIVADO
-        self.__velocidade_instantanea = 500
+        self.velocidade_instantanea = 500
 
     # Método PÚBLICO para alterar a velocidade de forma segura
     def acelerar(self, taxa_de_aceleracao):
-        self.__velocidade_instantanea += taxa_de_aceleracao
+        self.velocidade_instantanea += taxa_de_aceleracao
 
     # Método PÚBLICO para conseguirmos ler a velocidade na main
     def get_velocidade(self):
-        return self.__velocidade_instantanea
+        return self.velocidade_instantanea
 
 
 # --- INÍCIO DA MAIN ---
@@ -29,4 +29,4 @@ if __name__ == "__main__":
 
     # 2. O TESTE DA PERGUNTA 1: Tentando acessar a variável privada direto
     print("Tentando ler a variável privada diretamente...")
-    print(meu_carro.__velocidade_instantanea)
+    print(meu_carro.velocidade_instantanea)
